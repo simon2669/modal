@@ -1,0 +1,111 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  height: 100vh;
+}
+.openmodal {
+  text-align: center;
+  margin: 5rem;
+}
+.modal {
+  display: none;
+  align-items: center;
+
+  justify-content: center;
+}
+
+.modal__sötétítés {
+  overflow: hidden;
+  position: absolute;
+  height: 200vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.739);
+  z-index: 20;
+}
+
+.modal__szöveg {
+  border: solid 2px black;
+  border-radius: 8px;
+  padding: 1rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  width: 97%;
+  z-index: 26;
+  width: 50%;
+  background-color: white;
+}
+/* !560 px felett legyen 50% */
+@media (min-width: 560px) {
+  .modal__szöveg {
+    width: 97%;
+  }
+}
+
+.modal__footer {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal__elfogad {
+  margin: 1rem;
+  padding: 0.3rem;
+  font-size: 1.5rem;
+  background-color: rgb(75, 194, 75);
+}
+.modal__elutasít {
+  padding: 0.3rem;
+  margin: 1rem;
+  font-size: 1.5rem;
+  background-color: red;
+}
+
+.modal--megjelenés {
+  animation: megjelenés 1s ease-out;
+}
+
+@keyframes megjelenés {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal--eltünés {
+  animation: eltünés 1s ease-out;
+}
+
+@keyframes eltünés {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.modal__bezárás {
+  display: flex;
+  justify-content: flex-end;
+}
+.modal__bezárás__btn {
+  background-color: transparent;
+  border: none;
+  font-size: 4rem;
+}
+.displax-flex {
+  display: flex;
+}
+.modal__body {
+  font-size: 1.5rem;
+  word-wrap: break-word;
+}
